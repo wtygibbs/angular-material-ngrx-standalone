@@ -1,0 +1,33 @@
+$light-purple: hsl(271, 75%, 75%);
+
+.nav-item {
+  &__icon {
+
+  }
+
+  &__text {
+    letter-spacing: 0.075rem;
+  }
+
+  // Common styles for both :hover and --active
+  &:hover,
+  &--active {
+    border-left: solid 0.25rem $light-purple;
+
+    .nav-item__text,
+    .nav-item__icon {
+      color: $light-purple;
+    }
+  }
+
+  // Specific additional styles for --active
+  &--active {
+    background-color: rgb(85, 79, 85);
+  }
+
+  // Specific additional styles for :hover
+  &:hover {
+    box-shadow:
+      0 4px 6px rgba($light-purple, 0.2),
+  }
+}

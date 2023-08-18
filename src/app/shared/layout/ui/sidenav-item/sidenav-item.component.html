@@ -1,0 +1,4 @@
+<mat-list-item class="nav-item" [routerLink]="link" routerLinkActive="nav-item--active">
+  <mat-icon class="nav-item__icon" matListItemIcon>{{icon}}</mat-icon>
+  <span class="nav-item__text" matListItemTitle *ngIf="!collapsed">{{text}}</span>
+</mat-list-item>
