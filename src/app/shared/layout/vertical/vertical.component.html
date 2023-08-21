@@ -1,6 +1,6 @@
-<grid-header (sidenavCollapseChange)="collapsed = !collapsed"></grid-header>
+<grid-header></grid-header>
 <mat-sidenav-container class="example-sidenav-container" autosize>
-  <mat-sidenav #sidenav [mode]="'side'" opened [style.width]="collapsed ? '60px' : '200px'">
+  <mat-sidenav #sidenav [mode]="'side'" opened [style.width]="(sidenavOpen$ | async) ? '200px' : '60px'">
     <grid-sidenav></grid-sidenav>
   </mat-sidenav>
 

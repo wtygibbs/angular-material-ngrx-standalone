@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -6,6 +6,9 @@ import { MatListModule } from '@angular/material/list';
 import { HeaderComponent } from '../ui/header/header.component';
 import { SidenavComponent } from '../ui/sidenav/sidenav.component';
 import { RouterOutlet } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { selectLayoutSidenavOpen } from '../../store/layout/layout.selectors';
+import { LayoutActions } from '../../store/layout/layout.actions';
 
 @Component({
   selector: 'grid-vertical',
@@ -15,5 +18,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./vertical.component.scss']
 })
 export class VerticalComponent {
-  collapsed: boolean = false;
+  private store = inject(Store);
+
+  sidenavOpen$ = this.store.select(selectLayoutSidenavOpen);
 }

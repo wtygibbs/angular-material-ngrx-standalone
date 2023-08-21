@@ -1,7 +1,13 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" (click)="toggleSidenav()" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
+    <button *ngIf="sidenavOpen$ | async; else close" mat-icon-button class="example-icon" (click)="closeSidenav()" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <ng-template #close>
+    <button mat-icon-button class="example-icon" (click)="openSidenav()" aria-label="Example icon-button with menu icon">
+      <mat-icon>close</mat-icon>
+    </button>
+    </ng-template>
   <span>My App</span>
 
   <span class="spacer"></span>
@@ -14,4 +20,3 @@
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
-
