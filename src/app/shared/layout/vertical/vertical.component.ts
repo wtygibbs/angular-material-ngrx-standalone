@@ -9,13 +9,24 @@ import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { selectLayoutSidenavOpen } from '../../store/layout/layout.selectors';
 import { LayoutActions } from '../../store/layout/layout.actions';
+import { InsuredFormComponent } from '../../insured-form/insured-form.component';
+import { EasyExcessComponent } from 'src/app/easy-excess/easy-excess.component';
 
 @Component({
   selector: 'grid-vertical',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MatSidenavModule, MatListModule, HeaderComponent, SidenavComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    MatSidenavModule,
+    MatListModule,
+    HeaderComponent,
+    SidenavComponent,
+    InsuredFormComponent,
+    EasyExcessComponent,
+  ],
   templateUrl: './vertical.component.html',
-  styleUrls: ['./vertical.component.scss']
+  styleUrls: ['./vertical.component.scss'],
 })
 export class VerticalComponent {
   private store = inject(Store);

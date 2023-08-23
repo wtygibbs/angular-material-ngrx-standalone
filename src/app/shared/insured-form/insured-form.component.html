@@ -1,0 +1,42 @@
+<form [formGroup]="insuredForm" class="insured-form">
+  <mat-form-field class="insured-form__input">
+    <mat-label>Name</mat-label>
+    <input type="text" matInput formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field class="insured-form__input">
+    <mat-label>DBA</mat-label>
+    <input type="text" matInput formControlName="dba" />
+  </mat-form-field>
+
+  <div formGroupName="mailingAddress" class="address-form">
+    <h2>Mailing Address</h2>
+
+    <mat-form-field class="address-form__input">
+      <mat-label>Line 1</mat-label>
+      <input type="text" matInput formControlName="line1" />
+    </mat-form-field>
+
+    <mat-form-field class="address-form__input">
+      <mat-label>Line 2</mat-label>
+      <input type="text" matInput formControlName="line2" />
+    </mat-form-field>
+
+    <mat-form-field class="address-form__input">
+      <mat-label>Postal Code</mat-label>
+      <input type="text" matInput formControlName="postalCode" />
+    </mat-form-field>
+
+    <mat-form-field class="address-form__input">
+      <mat-label>City</mat-label>
+      <input type="text" matInput formControlName="city" />
+    </mat-form-field>
+
+    <mat-form-field class="address-form__input">
+      <mat-label>State</mat-label>
+      <mat-select formControlName="stateId">
+        <mat-option value="1">FL</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</form>

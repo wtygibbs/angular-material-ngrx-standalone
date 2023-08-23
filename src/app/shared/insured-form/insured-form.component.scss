@@ -1,0 +1,17 @@
+.insured-form {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+        width: 200px;
+    }
+}
+
+.address-form {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+        width: 200px;
+    }
+}

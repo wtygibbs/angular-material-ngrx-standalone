@@ -9,7 +9,7 @@ import { SidenavItemComponent } from '../sidenav-item/sidenav-item.component';
   standalone: true,
   imports: [MatListModule, SidenavItemComponent, NgFor],
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
   navItems = [
@@ -17,19 +17,19 @@ export class SidenavComponent {
       icon: 'home',
       text: 'HOME',
       collapsed: false,
-      link: '/home'
+      link: '/home',
     },
     {
       icon: 'search',
       text: 'SEARCH',
       collapsed: false,
-      link: '/search'
+      link: '/search',
     },
     {
       icon: 'info',
-      text: 'INFO',
+      text: 'EXCESS LIABILITY',
       collapsed: false,
-      link: '/info'
-    }
+      link: '/excess-liability',
+    },
   ];
 }

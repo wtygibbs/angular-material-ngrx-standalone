@@ -1,22 +1,27 @@
 <mat-toolbar color="primary">
-    <button *ngIf="sidenavOpen$ | async; else close" mat-icon-button class="example-icon" (click)="closeSidenav()" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
+  <button
+    *ngIf="sidenavOpen$ | async; else close"
+    mat-icon-button
+    (click)="closeSidenav()"
+    aria-label="Collapse Sidenav"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
 
-    <ng-template #close>
-    <button mat-icon-button class="example-icon" (click)="openSidenav()" aria-label="Example icon-button with menu icon">
-      <mat-icon>close</mat-icon>
+  <ng-template #close>
+    <button mat-icon-button (click)="openSidenav()" aria-label="Expand Sidenav">
+      <mat-icon>chevron_right</mat-icon>
     </button>
-    </ng-template>
+  </ng-template>
   <span>My App</span>
 
   <span class="spacer"></span>
 
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <button mat-icon-button aria-label="">
     <mat-icon>favorite</mat-icon>
   </button>
 
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <button mat-icon-button aria-label="">
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>

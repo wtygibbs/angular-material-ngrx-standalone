@@ -1,3 +1,8 @@
-<mat-nav-list *ngFor="let item of navItems">
-  <grid-sidenav-item [icon]="item.icon" [text]="item.text" [collapsed]="item.collapsed" [link]="item.link"></grid-sidenav-item>
+<mat-nav-list *ngFor="let item of navItems" dense>
+  <grid-sidenav-item
+    [icon]="item.icon"
+    [text]="item.text"
+    [collapsed]="item.collapsed"
+    [link]="item.link"
+  ></grid-sidenav-item>
 </mat-nav-list>

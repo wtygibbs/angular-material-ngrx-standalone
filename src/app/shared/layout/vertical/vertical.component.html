@@ -1,21 +1,18 @@
 <grid-header></grid-header>
 <mat-sidenav-container class="example-sidenav-container" autosize>
-  <mat-sidenav #sidenav [mode]="'side'" opened [style.width]="(sidenavOpen$ | async) ? '200px' : '60px'">
+  <mat-sidenav
+    #sidenav
+    [mode]="'side'"
+    opened
+    [style.width]="(sidenavOpen$ | async) ? '200px' : '60px'"
+  >
     <grid-sidenav></grid-sidenav>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <p style="width: 40px;">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </p>
+    <div style="padding: 24px">
+      <grid-easy-excess></grid-easy-excess>
+    </div>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
