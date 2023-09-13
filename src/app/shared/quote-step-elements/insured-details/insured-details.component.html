@@ -1,0 +1,63 @@
+<div>
+  <label>Insured Details</label>
+</div>
+<form [formGroup]="form">
+    <div class="container">
+        <div class="col-sm-12 col-md-8">
+          <mat-form-field appearance="fill">
+            <mat-label>Named Insured</mat-label>
+            <input matInput formControlName="namedInsured" type="text" />
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Business Type</mat-label>
+            <mat-select formControlName="businessType">
+              <mat-option *ngFor="let businessType of businessTypeOptions" [value]="businessType.id">
+                {{ businessType.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['businessType'].hasError('required')">
+              Please select a Business Type
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>Effective Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="effectiveDate" />
+            <mat-error *ngIf="form.controls['effectiveDate'].hasError('required')">
+              Please provide an Effective Date
+            </mat-error>
+            <mat-error *ngIf="form.controls['effectiveDate'].hasError('setInThePast')">
+              Effective Date cannot be set in the past
+            </mat-error>
+            <mat-error *ngIf="form.controls['effectiveDate'].hasError('setInTheFarFutre')">
+              Effective Date cannot be set more than 60 days from today
+            </mat-error>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-12 col-md-2">
+          <mat-form-field appearance="fill">
+            <mat-label>Term</mat-label>
+            <mat-select formControlName="term">
+              <mat-option *ngFor="let month of monthsToAddOptions" [value]="month">{{ month }} months</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Expiration Date</mat-label>
+            <input matInput formControlName="expirationDate" />
+            <mat-error *ngIf="form.controls['expirationDate'].hasError('required')">
+              Please provide an Expiration Date
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+    </div>
+  </form>

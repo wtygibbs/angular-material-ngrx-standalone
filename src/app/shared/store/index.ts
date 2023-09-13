@@ -1,20 +1,20 @@
 import { isDevMode } from '@angular/core';
 import {
-  ActionReducer,
   ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
   MetaReducer
 } from '@ngrx/store';
-import { LayoutState, reducer } from './layout/layout.reducer';
+import { LayoutState, layoutReducer } from './layout/layout.reducer';
+import { QuoteState , coverageReducer} from './quote/quote.reducer';
 
 
 export interface AppState {
-  layout: LayoutState
+  layout: LayoutState,
+  quote: QuoteState
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  layout: reducer
+  layout: layoutReducer,
+  quote: coverageReducer
 };
 
 

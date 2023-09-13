@@ -1,0 +1,30 @@
+<mat-stepper>
+  <ng-container *ngFor="let coverageStep of coverage.steps">
+    <mat-step [label]="coverageStep.title">
+        <!-- Check if the step has elements -->
+        <ng-container *ngIf="coverageStep.elements && coverageStep.elements.length > 0">
+          <!-- Loop through the elements and generate content -->
+          <ng-container *ngFor="let element of coverageStep.elements">
+            <ng-container [ngSwitch]="element.elementId">
+              <!-- Insured Details -->
+              <div *ngSwitchCase="'insuredDetails'">
+                <grid-insured-details *ngIf="element.show" [settings]="element.settings" [formFields]="element.fields"></grid-insured-details>
+              </div>
+              <!-- Mailing Address -->
+              <div *ngSwitchCase="'mailingAddress'">
+                <grid-mailing-address *ngIf="element.show" [settings]="element.settings" [formFields]="element.fields"></grid-mailing-address>
+              </div>
+              <!-- Physical Address -->
+              <div *ngSwitchCase="'physicalAddress'">
+                <grid-physical-address *ngIf="element.show" [settings]="element.settings"[formFields]="element.fields"></grid-physical-address>
+              </div>
+              <!-- Map -->
+              <div *ngSwitchCase="'map'">
+                <grid-map *ngIf="element.show" [mapData]="mapData"></grid-map>
+              </div>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+    </mat-step>
+  </ng-container>
+</mat-stepper>

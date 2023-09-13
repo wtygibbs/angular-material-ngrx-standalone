@@ -11,7 +11,7 @@ export const initialState: LayoutState = {
   sidenavOpen: true
 };
 
-export const reducer = createReducer(
+export const layoutReducer = createReducer(
   initialState,
   on(LayoutActions.openSidenav, (state: LayoutState) => ({ ...state, sidenavOpen: true })),
   on(LayoutActions.closeSidenav, (state: LayoutState) => ({ ...state, sidenavOpen: false }))

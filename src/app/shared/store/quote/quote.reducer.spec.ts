@@ -1,11 +1,11 @@
-import { layoutReducer, initialState } from './layout.reducer';
+import { reducer, initialState } from './quote.reducer';
 
-describe('Layout Reducer', () => {
+describe('Quote Reducer', () => {
   describe('an unknown action', () => {
     it('should return the previous state', () => {
       const action = {} as any;
 
-      const result = layoutReducer(initialState, action);
+      const result = reducer(initialState, action);
 
       expect(result).toBe(initialState);
     });

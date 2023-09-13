@@ -20,16 +20,22 @@ export class SidenavComponent {
       link: '/home',
     },
     {
-      icon: 'search',
-      text: 'SEARCH',
+      icon: 'add',
+      text: 'QUOTE',
       collapsed: false,
-      link: '/search',
+      link: '/new-app'
     },
     {
       icon: 'info',
       text: 'EXCESS LIABILITY',
       collapsed: false,
       link: '/excess-liability',
+    },
+    {
+      icon: 'search',
+      text: 'SEARCH',
+      collapsed: false,
+      link: '/search',
     },
   ];
 }

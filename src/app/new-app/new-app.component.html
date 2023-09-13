@@ -1,0 +1,18 @@
+<div>
+  <div class="header">
+    <h1>Select your Coverage</h1>
+  </div>
+</div>
+
+<!-- new-quote.component.html -->
+<div class="card-list">
+  <mat-card class="card" *ngFor="let coverage of coveragesList" (click)="onNewAppCoverageClick(coverage.coverageType)">
+    <mat-card-header>
+      <mat-card-title>{{ coverage.title }}</mat-card-title>
+      <mat-card-subtitle> coverage subtitle </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+       coverage content
+    </mat-card-content>
+  </mat-card>
+</div>
